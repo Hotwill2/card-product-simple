@@ -1,0 +1,122 @@
+/* Reset dasar untuk konsistensi */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container utama: Grid responsif untuk daftar produk */
+.container {
+    margin: 40px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(212, 212, 212);
+    
+    /* Layout grid: Responsif, minimal 250px per kolom */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px; /* Jarak antar produk */
+    justify-items: center; /* Pusatkan item dalam grid */
+}
+
+/* Hover effect pada container (opsional, untuk efek keseluruhan)
+.container:hover {
+    transform: scale(1.02);  Lebih halus dari 1.05 
+    transition: transform 0.3s ease;
+} */ 
+
+/* Kartu produk: Styling sebagai kartu individual */
+.produk {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center; /* Pusatkan konten */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    width: 100%; /* Pastikan kartu mengisi kolom grid */
+    max-width: 300px; /* Batas maksimal lebar kartu */
+}
+
+.produk:hover {
+    transform: translateY(-5px); /* Efek lift saat hover */
+    box-shadow: 0 4px 15px rgba(0, 38, 255, 0.2);
+    
+}
+
+/* Gambar produk */
+img {
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 7px;
+    display: block;
+    margin: 0 auto 15px; /* Pusatkan dan beri margin bawah */
+    width: 100%;
+    max-width: 200px; /* Batas maksimal lebar gambar */
+    height: auto; /* Jaga rasio aspek */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    float: none;
+}
+
+/* Judul produk */
+h3 {
+    font-family: 'Inter Tight', sans-serif; /* Gunakan font dari Google Fonts yang Anda load */
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: rgb(54, 54, 54);
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Deskripsi produk */
+.description {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+    margin: 10px 0;
+    line-height: 1.5;
+    text-align: justify; /* Lebih rapi untuk teks panjang */
+    min-height: 60px; /* Tinggi minimal untuk konsistensi */
+}
+
+/* Harga produk */
+.harga {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #e74c3c; /* Warna merah seperti di e-commerce */
+    margin: 15px 0 10px;
+    text-align: center; /* Pusatkan harga */
+    float: right; /* Hapus float untuk responsivitas */
+    opacity: 80%;
+}
+
+/* Nama toko */
+.store {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #27ae60; /* Warna hijau untuk indikasi toko terpercaya */
+    margin-top: 25px;
+    text-align: left;
+    opacity: 80%;
+}
+
+/* Responsivitas tambahan untuk mobile */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 kolom di mobile */
+        gap: 15px;
+    }
+    
+    .produk {
+        max-width: 100%;
+    }
+    
+    img {
+        max-width: 150px; /* Gambar lebih kecil di mobile */
+    }
+}
